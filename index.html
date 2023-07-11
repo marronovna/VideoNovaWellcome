@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://api.fontshare.com/v2/css?f[]=chillax@400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=chillax@600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <div class="page_mrrn">
+    <nav class="header_VN_mrrn">
+      <div class="logo_VN_mrrn">
+        <div class="spaceLogo_VN_mrrn"><img src="img/Logo.png">
+        </div>
+      </div>
+      <div>
+        <button class="border_button_mrrn" onclick="openForm('signUp')">Sign up</button>
+      </div>
+
+      <div class="overlay" id="overlay">
+        <div class="form-container" id="form-container">
+          <!-- Form content will be replaced when opening different forms -->
+        </div>
+      </div>
+
+      <div id="signUpForm" class="overlay">
+        <div class="form-container" id="sign-up-form-container">
+          <form class="form_content_mrrn">
+            <button class="closing_cross_mrrn" onclick="closeForm()">
+              <img src="img/Close.png" />
+            </button>
+            <div class="text1_mrrn">Sign<span class="red_mrrn">&nbspUp</span></div>
+
+            <div class="title_standart_mrrn">Name</div>
+            <div class="input_standart_mrrn">
+              <input type="text" name="link" placeholder="Type name…" />
+            </div>
+
+            <div class="title_standart_mrrn">Password</div>
+            <div class="input_standart_mrrn">
+              <input type="password" placeholder="Type password…" id="p_i" />
+              <div class="eyeicon">
+                <input type="checkbox" class="p_i_chckbx_mrrn" onclick="showPassword()" />
+                <img src="img/eye.png" />
+                <div class="eyeline" id="eyeline"></div>
+              </div>
+            </div>
+
+            <div class="title_standart_mrrn">Repeat Password</div>
+            <div class="input_standart_mrrn">
+              <input type="password" placeholder="Repeat password…" id="repeat_p_i" />
+              <div class="eyeicon">
+                <input type="checkbox" class="p_i_chckbx_mrrn" onclick="showRepeatPassword()" />
+                <img src="img/eye.png" />
+                <div class="eyeline" id="repeat_eyeline"></div>
+              </div>
+            </div>
+
+            <div class="form_buttons_mrrn">
+              <button onclick="openForm('signUpLoading')" class="color_button_mrrn">Sign Up</button>
+            </div>
+            <div class="bottom_qestion_mrrn">
+              Already have an account?
+              <button onclick="openForm('signIn')" class="button_link_mrrn">Sign In</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="signUpLoading" class="overlay">
+        <div class="form-container" id="sign-up-loading-form-container">
+          <form class="form_content_mrrn">
+            <button onclick="closeForm('signUpLoading')" class="closing_cross_mrrn"><img src="img/Close.png"></button>
+            <div class="text1_mrrn">Sign<span class="red_mrrn">&nbspUp</span></div>
+
+            <div class="title_standart_mrrn">Name</div>
+            <div class="input_standart_mrrn">
+              <input type="text" placeholder="Please, wait…">
+            </div>
+
+            <div class="title_standart_mrrn">Password</div>
+            <div class="input_standart_disabled_mrrn">
+              <input type="password" placeholder="Pleale, wait…" id="p_i">
+              <div class="eyeicon"><input type="checkbox" class="p_i_chckbx_disabled_mrrn" onclick="showPassword()"><img
+                  src="img/eye.png">
+                <div class="eyeline" id="eyeline"></div>
+              </div>
+            </div>
+
+            <div class="title_standart_mrrn">Repeat Password</div>
+            <div class="input_standart_mrrn">
+              <input type="password" placeholder="Please, wait…" id="repeat_p_i">
+              <div class="eyeicon"><input type="checkbox" class="p_i_chckbx_disabled_mrrn"
+                  onclick="showRepeatPassword()"><img src="img/eye.png">
+                <div class="eyeline" id="repeat_eyeline"></div>
+              </div>
+            </div>
+
+            <div class="form_buttons_mrrn"><button class="color_button_disabled_mrrn">Sign Up &nbsp&nbsp<div><img
+                    src="img/loading.png"></div></button></div>
+            <div class="bottom_qestion_mrrn">Already have an account?<a onclick="openForm('signIn')"
+                class="button_link_disabled_mrrn">Sign In</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+      <div id="signInForm" class="overlay">
+        <div class="form-container" id="sign-in-form-container">
+          <form class="form_content_mrrn">
+            <button class="closing_cross_mrrn" onclick="closeForm()">
+              <img src="img/Close.png" />
+            </button>
+            <div class="text1_mrrn">Sign<span class="red_mrrn">&nbspIn</span></div>
+
+            <div class="title_standart_mrrn">Name</div>
+            <div class="input_standart_disabled_mrrn">
+              <input type="text" name="name" placeholder="Type name…" />
+            </div>
+
+            <div class="title_standart_mrrn">Password</div>
+            <div class="input_standart_mrrn">
+              <input type="password" placeholder="Type password…" id="p_i" />
+              <div class="eyeicon">
+                <input type="checkbox" class="p_i_chckbx_mrrn" onclick="showPassword()" />
+                <img src="img/eye.png" />
+                <div class="eyeline" id="eyeline"></div>
+              </div>
+            </div>
+
+            <div class="form_buttons_mrrn">
+              <button class="color_button_mrrn">Sign In</button>
+            </div>
+            <div class="bottom_qestion_mrrn">
+              Don't have an account?
+              <button onclick="openForm('signUp')" class="button_link_mrrn">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="signInFormError" class="overlay">
+        <div class="form-container" id="sign-in-form-error-container">
+          <form class="form_content_mrrn">
+            <button onclick="closeForm()" class="closing_cross_mrrn"><img src="img/Close.png" /></button>
+            <div class="text1_mrrn">Sign<span class="red_mrrn">&nbspIn</span></div>
+
+            <div class="error_massage_mrrn">
+              <span>Your Password is incorrect. Please, try again</span>
+            </div>
+
+            <div class="title_standart_mrrn">Name</div>
+            <div class="input_standart_mrrn">
+              <input type="text" name="name" placeholder="Type name…" />
+            </div>
+
+            <div class="qestion_mrrn">
+              <div class="title_standart_mrrn">Password</div>
+              <a class="button_link_mrrn">Forgot Password?</a>
+            </div>
+            <div class="input_standart_mrrn">
+              <input type="password" placeholder="Type password…" id="p_i" />
+              <div class="eyeicon">
+                <input type="checkbox" class="p_i_chckbx_mrrn" onclick="showPassword()" /><img src="img/eye.png" />
+                <div class="eyeline" id="eyeline"></div>
+              </div>
+            </div>
+
+            <div class="form_buttons_mrrn">
+              <button class="color_button_mrrn">Sign In</button>
+            </div>
+            <div class="bottom_qestion_mrrn">
+              Dont have an account?<a class="button_link_mrrn">Sign Up</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="page_content_mrrn">
+      <div class="welcome_mrrn">
+        <div class="text1_mrrn">Welcome To<span class="red_mrrn">&nbspVideoNova</span></div>
+        <div class="text2_mrrn">Create videos with a single click. Add subtitles, transcribe audio and more</div>
+        <div> <button onclick="openForm('signUp')" class="color_button_mrrn">Start Now</button> </div>
+      </div>
+
+      <div class="group">
+        <div class="title_middle_mrrn">Best Creators<img src="img/ranking.png"></div>
+        <div class="creatorsCards_mrrn">
+          <div class="creatorCard_mrrn">
+            <div class="creator_mrrn"><img src="img/Ellipse 4.png">Anna May</div>
+            <div class="v_l_container_mrrn">
+              <div class="v_l_mrrn"><img src="img/video-square.png">12 videos</div>
+              <div class="v_l_mrrn"><img src="img/heart.png">255 likes</div>
+            </div>
+            <div><button class="color_button_mrrn">To profile</button></div>
+          </div>
+
+          <div class="creatorCard_mrrn">
+            <div class="creator_mrrn"><img src="img/Ellipse 4 (1).png">Jane Dou</div>
+            <div class="v_l_container_mrrn">
+              <div class="v_l_mrrn"><img src="img/video-square.png">27 videos</div>
+              <div class="v_l_mrrn"><img src="img/heart.png">120 likes</div>
+            </div>
+            <div><button class="color_button_mrrn">To profile</button></div>
+          </div>
+
+          <div class="creatorCard_mrrn">
+            <div class="creator_mrrn"><img src="img/Ellipse 4 (2).png">Kerry Willams</div>
+            <div class="v_l_container_mrrn">
+              <div class="v_l_mrrn"><img src="img/video-square.png">255 videos</div>
+              <div class="v_l_mrrn"><img src="img/heart.png">305 likes</div>
+            </div>
+            <div><button class="color_button_mrrn">To profile</button></div>
+          </div>
+
+          <div class="creatorCard_mrrn">
+            <div class="creator_mrrn"><img src="img/Ellipse 4 (3).png">Den Bennet</div>
+            <div class="v_l_container_mrrn">
+              <div class="v_l_mrrn"><img src="img/video-square.png">12 videos</div>
+              <div class="v_l_mrrn"><img src="img/heart.png">400 likes</div>
+            </div>
+            <div><button class="color_button_mrrn">To profile</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_mrrn">
+      <a class="footer_logo_mrrn"><img src="img/LogoFoot.png"></a>
+      <div class="footer_text_mrrn">All Rights Reserved 2022</div>
+      <div class="contacts_mrrn">
+        <a><img src="img/Telegr.png"></a><a><img src="img/Disc.png"></a><a><img src="img/Twi.png"></a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
